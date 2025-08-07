@@ -1,0 +1,3 @@
+Este é um arquivo texto com conteúdo escrito.
+
+Seu conteúdo deve ser repassado e preservado.
