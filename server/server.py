@@ -13,14 +13,14 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
     client, address = server.accept()
     print(f"[+] Conexão estabelecida com {address}")   
 
-    nome_arquivo = client.recv(BUFFER).decode()
-    print(f"[*] Recebendo arquivo: {nome_arquivo}")
+    file_name = client.recv(BUFFER).decode()
+    print(f"[*] Recebendo arquivo: {file_name}")
 
-    with open(nome_arquivo, 'wb') as arquivo:
+    with open(file_name, 'wb') as archive:
         while True:
-            dados = client.recv(BUFFER)
-            if not dados:
+            data = client.recv(BUFFER)
+            if not data:
                 break
-            arquivo.write(dados)
+            archive.write(data)
 
-    print(f"[+] Arquivo '{nome_arquivo}' recebido com sucesso!")
+    print(f"[+] Arquivo '{file_name}' recebido com sucesso!")
